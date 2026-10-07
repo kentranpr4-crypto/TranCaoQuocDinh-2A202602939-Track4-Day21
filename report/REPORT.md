@@ -26,6 +26,8 @@ Mỗi điểm được gán vào object bằng box 3D KITTI; chỉ giữ các đ
 
 Ở `2°`, mất `15,51%` điểm hỗ trợ nên claim được ủng hộ. FOV giảm chậm hơn retention: phần lớn điểm vẫn trong ảnh nhưng sai vị trí trên object. Ảnh demo gần (`000019`), trung bình (`000011`) và xa (`000009`) nằm trong `results/figures/`; dưới đây là ảnh `000011` và biểu đồ.
 
+Dashboard tương tác: [`dashboard/index.html`](../dashboard/index.html). Demo chuyển động 15 trạng thái: [`GIF`](../results/figures/calibration_drift_demo.gif) hoặc [`MP4`](../results/figures/calibration_drift_demo.mp4).
+
 ![KITTI frame 000011 baseline, nguồn KITTI Vision Benchmark Suite](../results/figures/demo_000011_baseline.png)
 ![Yaw sweep trên 20 frame KITTI mini](../results/figures/yaw_sweep.png)
 
@@ -51,6 +53,7 @@ python tools/verify_data.py --data-root data/kitti_mini
 python -m unittest src.test_projection -v
 python -m starter.projection --data-root data/synthetic --frame 000000
 python -m src.topic_a
+python -m src.build_demo
 python tools/check_submission.py
 ```
 
